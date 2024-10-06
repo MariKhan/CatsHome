@@ -6,77 +6,47 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="page-header">
+<header class="page-header">
     <div class="container">
-
         <a class="btn-lorem" href="#">Lorem</a>
-        <a href="#" class="icon menu-icon"></a>
-
         <a href="#" class="icon menu-icon"><img src="public/icons/Menu.svg" alt="Menu"></a>
-
         <div class="menu">
             <ul class="main-nav">
                 <li><a href="#">Home</a></li>
             </ul>
         </div>
-
         <div class="header-icons">
             <a href="#" class="icon email-icon"><img src="public/icons/Email.svg" alt="Email"></a>
             <a href="#" class="icon phone-icon"><img src="public/icons/Phone.svg" alt="Phone"></a>
         </div>
     </div>
-</div>
-<section class="text-section">
+</header>
+
+<main class="text-section">
     <div class="love-cat">
-        <h1>Мы любим животных </br>
-            и поддерживаем их</h1>
-        <p> Один из проверенных способов это сделать — помочь благотворительному фонду</p>
-        <button class="btn-good-button" >Кнопка добра</button>
-
+        <h1>Мы любим животных <br> и поддерживаем их</h1>
+        <p>Один из проверенных способов это сделать — помочь благотворительному фонду</p>
+        <button class="btn-good-button">Кнопка добра</button>
     </div>
-<div class="cat-image">
-    <img src="public/img/Cat.png" alt="Email">
-</div>
+    <div class="cat-image">
+        <img src="public/img/Cat.png" alt="Cat">
+    </div>
+</main>
 
-</section >
 <script>
-    function updateMenuIcon() {
-        const menuIcon = document.querySelector('.menu-icon img');
-
-        if (window.innerWidth <= 767) {
-            menuIcon.src = 'public/icons/Menu16.svg'
-        } else {
-            menuIcon.src = 'public/icons/Menu.svg';
-        }
+    function updateIcon(selector, src, fallbackSrc) {
+        const icon = document.querySelector(selector);
+        icon.src = window.innerWidth <= 767 ? fallbackSrc : src;
     }
-    window.addEventListener('resize', updateMenuIcon);
-    window.addEventListener('load', updateMenuIcon);
 
-    function updateEmailIcon() {
-        const icon = document.querySelector('.email-icon img');
-
-        if (window.innerWidth <= 767) {
-            icon.src = 'public/icons/Email16.svg'
-        } else {
-            icon.src = 'public/icons/Email.svg';
-        }
+    function updateIcons() {
+        updateIcon('.menu-icon img', 'public/icons/Menu.svg', 'public/icons/Menu16.svg');
+        updateIcon('.email-icon img', 'public/icons/Email.svg', 'public/icons/Email16.svg');
+        updateIcon('.phone-icon img', 'public/icons/Phone.svg', 'public/icons/Phone16.svg');
     }
-    window.addEventListener('resize', updateEmailIcon);
-    window.addEventListener('load', updateEmailIcon);
 
-    function updatePhoneIcon() {
-        const icon = document.querySelector('.phone-icon img');
-
-        if (window.innerWidth <= 767) {
-            icon.src = 'public/icons/Phone16.svg'
-        } else {
-            icon.src = 'public/icons/Phone.svg';
-        }
-    }
-    window.addEventListener('resize', updatePhoneIcon);
-    window.addEventListener('load', updatePhoneIcon);
+    window.addEventListener('resize', updateIcons);
+    window.addEventListener('load', updateIcons);
 </script>
-
-
 </body>
 </html>
