@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Cats Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page-header">
+    <div class="container">
+
+        <a class="btn-lorem" href="#">Lorem</a>
+        <a href="#" class="icon menu-icon"></a>
+
+        <a href="#" class="icon menu-icon"><img src="public/icons/Menu.svg" alt="Menu"></a>
+
+        <div class="menu">
+            <ul class="main-nav">
+                <li><a href="#">Home</a></li>
+            </ul>
+        </div>
+
+        <div class="header-icons">
+            <a href="#" class="icon email-icon"><img src="public/icons/Email.svg" alt="Email"></a>
+            <a href="#" class="icon phone-icon"><img src="public/icons/Phone.svg" alt="Phone"></a>
+        </div>
+    </div>
+</div>
+<section class="text-section">
+    <div class="love-cat">
+        <h1>Мы любим животных </br>
+            и поддерживаем их</h1>
+        <p> Один из проверенных способов это сделать — помочь благотворительному фонду</p>
+        <button class="btn-good-button" >Кнопка добра</button>
+
+    </div>
+<div class="cat-image">
+    <img src="public/img/Cat.png" alt="Email">
+</div>
+
+</section >
+<script>
+    function updateMenuIcon() {
+        const menuIcon = document.querySelector('.menu-icon img');
+
+        if (window.innerWidth <= 767) {
+            menuIcon.src = 'public/icons/Menu16.svg'
+        } else {
+            menuIcon.src = 'public/icons/Menu.svg';
+        }
+    }
+    window.addEventListener('resize', updateMenuIcon);
+    window.addEventListener('load', updateMenuIcon);
+
+    function updateEmailIcon() {
+        const icon = document.querySelector('.email-icon img');
+
+        if (window.innerWidth <= 767) {
+            icon.src = 'public/icons/Email16.svg'
+        } else {
+            icon.src = 'public/icons/Email.svg';
+        }
+    }
+    window.addEventListener('resize', updateEmailIcon);
+    window.addEventListener('load', updateEmailIcon);
+
+    function updatePhoneIcon() {
+        const icon = document.querySelector('.phone-icon img');
+
+        if (window.innerWidth <= 767) {
+            icon.src = 'public/icons/Phone16.svg'
+        } else {
+            icon.src = 'public/icons/Phone.svg';
+        }
+    }
+    window.addEventListener('resize', updatePhoneIcon);
+    window.addEventListener('load', updatePhoneIcon);
+</script>
+
+
+</body>
+</html>
